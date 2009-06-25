@@ -174,7 +174,8 @@ class AssetsController < ApplicationController
     end
     
     def clear_model_cache
-      ResponseCache.instance.clear
+      ResponseCache.instance.clear if defined?ResponseCache
+      Radiant::Cache.clear if defined?(Radiant::Cache)
     end
 
 end
