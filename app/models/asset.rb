@@ -84,10 +84,10 @@ class Asset < ActiveRecord::Base
     
   def thumbnail(size='original')
     case 
-      when self.pdf?   : "/images/assets/pdf_#{size.to_s}.png"
-      when self.movie? : "/images/assets/movie_#{size.to_s}.png"
-      when self.audio? : "/images/assets/audio_#{size.to_s}.png"
-      when self.other? : "/images/assets/doc_#{size.to_s}.png"
+      when self.pdf?   ; "/images/assets/pdf_#{size.to_s}.png"
+      when self.movie? ; "/images/assets/movie_#{size.to_s}.png"
+      when self.audio? ; "/images/assets/audio_#{size.to_s}.png"
+      when self.other? ; "/images/assets/doc_#{size.to_s}.png"
     else
       self.asset.url(size.to_sym)
     end
